@@ -33,7 +33,8 @@
     "ronin": "^5.2.0",
     "tailwind-merge": "^2.5.5",
     "telegram": "^2.26.8",
-    "vinxi": "0.5.1"
+    "vinxi": "0.5.1",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "devDependencies": {
     "@ronin-types/notlost": "^0.0.0-3467553999232",

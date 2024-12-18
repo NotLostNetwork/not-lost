@@ -1,15 +1,18 @@
 import { useEffect, useRef, useState } from "react"
-import { Button, Input } from "@telegram-apps/telegram-ui"
+import { Button } from "@telegram-apps/telegram-ui"
 import personIcon from "~/shared/assets/icons/person-icon.svg"
 import connectionIcon from "~/shared/assets/icons/connection-icon.svg"
-import PencilIcon from "~/shared/assets/icons/iconsAsComponent/pencil-icon"
-import Modal from "~/shared/ui/modals/modal"
+import PencilIcon from "~/shared/assets/icons/pencil-icon.svg?react"
 import CreateContactModal from "./create-contact-modal"
+import { useNavigate } from "@tanstack/react-router"
+import { Route as SignInRoute } from "~/routes/app/tg-sign-in"
 
 export const Pencil = () => {
   const [showToolTip, setShowToolTip] = useState(false)
   const [showCreateContactModal, setShowCreateContactModal] = useState(false)
   const tooltipRef = useRef<HTMLDivElement>(null)
+
+  const navigate = useNavigate()
 
   const toggleShowToolTip = () => {
     setShowToolTip(!showToolTip)
@@ -46,6 +49,10 @@ export const Pencil = () => {
             icon={personIcon}
             title={"New contact"}
             action={() => {
+              console.log(document.cookie);
+              if (false) {
+                navigate(SignInRoute)
+              }
               setShowCreateContactModal(true)
               setShowToolTip(false)
             }}
@@ -63,8 +70,8 @@ export const Pencil = () => {
           style={{ borderRadius: "50% !important" }}
           onClick={toggleShowToolTip}
         >
-          <div className="h-6 w-6">
-            <PencilIcon color={"#fff"} />
+          <div className="h-6 w-6 text-white">
+            <PencilIcon />
           </div>
         </Button>
       </div>

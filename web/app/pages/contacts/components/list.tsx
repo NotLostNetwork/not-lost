@@ -3,14 +3,12 @@ import { AnimatePresence, motion } from "framer-motion"
 import utyaLoading from "~/shared/assets/utya-loading.gif"
 
 import { Button } from "@telegram-apps/telegram-ui"
-import { GraphIcon } from "~/shared/assets/icons/iconsAsComponent/graph-icon"
-import React from "react"
+import GraphIcon  from "~/shared/assets/icons/graph-icon.svg?react"
 
 import TgWallpaper from "~/shared/ui/tg-wallpaper"
 import Contact from "./contact"
 import { Pencil } from "./pencil"
 import { UserContact } from "~/entities/user/user-contact/interface"
-import Modal from "~/shared/ui/modals/modal"
 
 const ContactsList = ({
   filtersBlockHeight,
@@ -78,7 +76,9 @@ const ContactsList = ({
           onClick={toggleGraphMode}
         >
           <div className="h-6 w-6">
-            <GraphIcon color={"#fff"} />
+            <div style={{color: '#fff'}}>
+              <GraphIcon />
+            </div>
           </div>
         </Button>
       </div>

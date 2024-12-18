@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router"
-import { SearchIcon } from "~/shared/assets/icons/iconsAsComponent/search-icon"
-import { GraphIcon } from "~/shared/assets/icons/iconsAsComponent/graph-icon"
+import SearchIcon from "~/shared/assets/icons/search-icon.svg?react"
+import GraphIcon from '~/shared/assets/icons/graph-icon.svg?react';
 import React from "react"
 import { getCssVariableValue } from "~/shared/lib/utils/funcs/get-css-variable-value"
 import { Route as GraphRoute } from "~/routes/app/_tab-bar/graph"
@@ -26,7 +26,7 @@ export default function BottomBar() {
 interface BottomBarLinkProps {
   to: string
   title: string
-  Icon: React.FC<{ color: string }>
+  Icon: React.FC
 }
 
 const BottomBarLink: React.FC<BottomBarLinkProps> = ({ to, title, Icon }) => {
@@ -39,17 +39,9 @@ const BottomBarLink: React.FC<BottomBarLinkProps> = ({ to, title, Icon }) => {
         <>
           <div
             className={`h-8 w-8 rounded-full transition-all duration-150 ease-in-out ${isActive ? "bg-buttonBezeled" : "bg-transparent "}`}
-          >
-            <div
-              className={`transition-all duration-150 ease-in-out ${isActive ? "p-1" : "p-[3px]"}`}
-            >
-              <Icon
-                color={
-                  isActive
-                    ? getCssVariableValue("--tg-theme-accent-text-color")
-                    : "white"
-                }
-              />
+          > 
+            <div style={{color: isActive ? getCssVariableValue("--tg-theme-accent-text-color") : "white", padding: isActive ? 6 : 4}} className="transition-all duration-150 ease-in-out">
+              <Icon/>
             </div>
           </div>
           <span
