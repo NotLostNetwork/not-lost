@@ -44,9 +44,6 @@ const ContactsPage = () => {
         style={{paddingTop: `calc(${getCssVariableValue('--tg-viewport-safe-area-inset-top') || '0px'} + ${getCssVariableValue('--tg-viewport-content-safe-area-inset-top')})`}}
         className="pb-4 w-full bg-primary -mt-4 pl-4 pr-4 shadow-lg border-b-primary border-b-[1px]"
       >
-        <div className="text-blue-500 font-semibold text-center mr-4 mt-2 animate-pulse relative z-10 top-2">
-          NotLost Alpha
-        </div>
         <FilterBySearch
           value={filtersState.searchState}
           onChange={(value: string) =>
